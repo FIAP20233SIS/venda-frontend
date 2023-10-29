@@ -1,0 +1,10 @@
+<div class="products">
+    <div class="container">
+
+        <div class="exibe produto" *ngFor="let product of products">
+            <h3>{{ product.name }}</h3>
+            <p>Valor: {{ product.value }}</p>
+            <button>Comprar</button>
+        </div>
+    </div>
+</div>
