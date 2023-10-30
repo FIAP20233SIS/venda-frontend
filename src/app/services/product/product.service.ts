@@ -1,19 +1,24 @@
 import { Component } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ProductService {
-  private apiUrl = '/produto';
-
   constructor(private http: HttpClient) {}
 
   public getProducts(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+    const apiUrl = 'https://apiproduto.azurewebsites.net/produto/exibir';
+    return this.http.get<any[]>(apiUrl)
+    .pipe(
+      tap(data => console.log('Produtos recebidos:', data)),
+      catchError(error => {
+        console.error('Erro ao buscar produtos:', error);
+        return [];
+      })
+    );
   }
-
 }

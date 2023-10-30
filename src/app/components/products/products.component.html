@@ -1,10 +1,15 @@
 <div class="products">
-    <div class="container">
-
-        <div class="exibe produto" *ngFor="let product of products">
-            <h3>{{ product.name }}</h3>
-            <p>Valor: {{ product.value }}</p>
-            <button>Comprar</button>
-        </div>
+    <div class="products__logo">
+        <img src="../../../assets/images/logo.svg" alt="">
     </div>
+    <div class="products__list">
+        <div class="products__product" *ngFor="let produto of produtos">
+        <h3>{{ produto.nome }}</h3>
+        <p>R${{ produto.valorVenda }}</p>
+        <button>Comprar</button>
+    </div>
+    </div>
+    
 </div>
+
+<app-modal-product (closeModalEmit)="closeModal()"></app-modal-product>

@@ -9,13 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './services/product/product.service';
 import { PaymentComponent } from './components/payment/payment.component';
 import { FormsModule } from '@angular/forms';
+import { ModalProductComponent } from './components/modal-product/modal-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     ProductsComponent,
-    PaymentComponent
+    PaymentComponent,
+    ModalProductComponent
   ],
   imports: [
     BrowserModule,
