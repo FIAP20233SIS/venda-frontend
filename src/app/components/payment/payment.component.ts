@@ -7,10 +7,12 @@ import { PaymentService } from 'src/app/services/payment/payment.service';
   styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent {
+  dadosDoFormulario: any = {};
+
   constructor(private pagamentoService: PaymentService) { }
 
-  fazerPagamento(dados: PaymentService): void {
-    this.pagamentoService.fazerPagamento(dados).subscribe(
+  fazerPagamento(): void {
+    this.pagamentoService.fazerPagamento(this.dadosDoFormulario).subscribe(
       resposta => {
         console.log('Pagamento concluído!', resposta);
       },

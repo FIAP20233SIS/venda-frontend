@@ -1,8 +1,36 @@
-<!-- <form (ngSubmit)="fazerPagamento()">
-    <input type="text" [(ngModel)]="dadosDoFormulario.nomeTitular" placeholder="Nome">
-    <input type="text" [(ngModel)]="dadosDoFormulario.numeroCartao" placeholder="Número do Cartão">
-    <input type="text" [(ngModel)]="dadosDoFormulario.dataValidade" placeholder="Data de Validade">
-    <input type="text" [(ngModel)]="dadosDoFormulario.cvv" placeholder="CVV">
-    <input type="text" [(ngModel)]="dadosDoFormulario.valor" placeholder="Valor">  
-    <button type="submit">Pagar</button>
-</form> -->
+<div class="payment">
+    <div class="payment__logo">
+        <img src="../../../assets/images/logo.svg" alt="">
+    </div>
+
+    <div class="payment__container">
+        <div class="container__form">
+            <h2>Pagamento</h2>
+            <form (ngSubmit)="fazerPagamento()">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" [(ngModel)]="dadosDoFormulario.nomeTitular" name="nomeTitular">
+                </div>
+                <div class="form-group">
+                    <label for="email">Número do cartão</label>
+                    <input type="text" [(ngModel)]="dadosDoFormulario.numeroCartao" name="numeroCartao">
+                </div>
+                <div class="form-group">
+                    <label for="cpf">Data de validade</label>
+                    <input type="text" [(ngModel)]="dadosDoFormulario.dataValidade" name="dataValidade">
+                </div>
+                <div class="form-group">
+                    <label for="telefone">CVV</label>
+                    <input type="text" [(ngModel)]="dadosDoFormulario.cvv" name="cvv">
+                </div>
+                <div class="form-group">
+                    <button type="submit">Concluir</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="container__img">
+            <img src="../../../assets/images/pagamento.jpg" alt="">
+        </div>
+    </div>
+</div>

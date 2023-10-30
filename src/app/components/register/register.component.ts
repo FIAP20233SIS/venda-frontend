@@ -1,5 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { RegisterClientService } from 'src/app/services/register-client/register-client.service';
+import { ClientInterface } from 'src/app/interfaces/client.interface';
 
 @Component({
   selector: 'app-register',
@@ -7,25 +8,35 @@ import { RegisterClientService } from 'src/app/services/register-client/register
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  constructor(private registerClientService: RegisterClientService) { }
+  client: ClientInterface = {
+    nome: '',
+    email: '',
+    cpf: '',
+    telefone: ''
+  }
 
-  cadastrarCliente(id: number, nome: string, email: string, cpf: string, telefone: string): void {
-    const novoCliente = {
-      id: id,
-      nome: nome,
-      email: email,
-      cpf: cpf,
-      telefone: telefone
+  constructor(private http: HttpClient) { }
+
+  cadastrarCliente() {
+    const clienteJSON = JSON.stringify(this.client);
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
     };
-  
-    this.registerClientService.cadastrarCliente(novoCliente)
-      .subscribe(
-        response => {
-          console.log('Cliente cadastrado com sucesso!', response);
-        },
-        error => {
-          console.error('Erro ao cadastrar cliente', error);
-        }
-      );
+
+    this.http.post('https://clienteapifiap.azurewebsites.net/clientes', clienteJSON, httpOptions).subscribe(
+      (response) => {
+        console.log('Cliente cadastrado com sucesso:', response);
+      },
+      (error) => {
+        console.error('Erro ao cadastrar cliente:', error);
+      }
+    );
+  }
+
+  onSubmit() {
+    this.cadastrarCliente();
   }
 }
