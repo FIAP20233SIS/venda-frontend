@@ -9,12 +9,11 @@ import { ProductService } from 'src/app/services/product/product.service';
 })
 
 export class ProductsComponent {
-    selectedProduct: any;
-    produtos: ProductInterface[] = [];
+  selectedProduct: any;
+  modalProduct!: boolean;
+  produtos: ProductInterface[] = [];
 
-    public modalProduct: boolean = false;
-
-    constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService) { }
 
     ngOnInit(): void {
         this.productService.getProducts().subscribe((response: any) => {
@@ -22,11 +21,8 @@ export class ProductsComponent {
         });
     }
 
-    openModal() {
-        this.modalProduct = true;
-    }
-
-    closeModal() {
-        this.modalProduct = false;
+    showProductModal(product: any) {
+      this.selectedProduct = product;
+      this.modalProduct = true;
     }
 }

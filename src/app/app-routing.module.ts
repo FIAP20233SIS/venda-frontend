@@ -5,8 +5,8 @@ import { ProductsComponent } from './components/products/products.component';
 import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
-  { path: 'registro', component: RegisterComponent },
-  { path: 'produtos', component: ProductsComponent },
+  { path: 'cadastro-cliente', component: RegisterComponent },
+  { path: '', component: ProductsComponent },
   { path: 'pagamento', component: PaymentComponent },
 ];
 

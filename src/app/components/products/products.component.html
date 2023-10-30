@@ -6,10 +6,9 @@
         <div class="products__product" *ngFor="let produto of produtos">
         <h3>{{ produto.nome }}</h3>
         <p>R${{ produto.valorVenda }}</p>
-        <button>Comprar</button>
+        <button (click)="showProductModal(produto)">Comprar</button>
     </div>
     </div>
-    
 </div>
 
-<app-modal-product (closeModalEmit)="closeModal()"></app-modal-product>
+<app-modal-product *ngIf="modalProduct" (closeModalEmit)="modalProduct = false"></app-modal-product>

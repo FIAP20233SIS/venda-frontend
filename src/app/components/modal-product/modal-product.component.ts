@@ -7,12 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ModalProductComponent {
   @Input() product: any;
-
   @Output() closeModalEmit = new EventEmitter();
-  
-  closeModal() {
-    this.closeModalEmit.emit();
-  }
 
   constructor() { }
 }
