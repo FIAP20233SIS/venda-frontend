@@ -10,6 +10,9 @@ import { ProductService } from './services/product/product.service';
 import { PaymentComponent } from './components/payment/payment.component';
 import { FormsModule } from '@angular/forms';
 import { ModalProductComponent } from './components/modal-product/modal-product.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { CompletedPurchaseComponent } from './components/completed-purchase/completed-purchase.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,21 @@ import { ModalProductComponent } from './components/modal-product/modal-product.
     RegisterComponent,
     ProductsComponent,
     PaymentComponent,
-    ModalProductComponent
+    ModalProductComponent,
+    CompletedPurchaseComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      iconClasses: {
+        error: 'custom-toast-error',
+        info: 'ngx-toastr-info',
+        success: 'custom-toast-success',
+        warning: 'ngx-toastr-warning'
+      }
+    }),
     AppRoutingModule,
     HttpClientModule,
     FormsModule

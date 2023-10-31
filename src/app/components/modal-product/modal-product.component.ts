@@ -1,4 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductInterface } from 'src/app/interfaces/product.interface';
+import { PurchaseService } from 'src/app/services/purchase/purchase.service';
 
 @Component({
   selector: 'app-modal-product',
@@ -7,7 +10,17 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ModalProductComponent {
   @Input() product: any;
-  @Output() closeModalEmit = new EventEmitter();
+  @Output() closeModalEmit = new EventEmitter()
 
-  constructor() { }
+  constructor(
+    private router: Router, 
+    private purchaseService: PurchaseService,
+  ) { }
+
+  comprarProduto() {
+    this.purchaseService.produtoSelecionado = this.product;
+    this.router.navigate(['/cadastro-cliente']);
+
+    localStorage.setItem('produtoSelecionado', JSON.stringify(this.product));
+  }
 }

@@ -3,4 +3,6 @@ export interface ProductInterface {
   nome: string;
   valorVenda: number;
   descricao: string;
+  url: string;
+  quantidade: number;
 }

@@ -4,8 +4,10 @@
     </div>
     <div class="products__list">
       <div class="products__product" *ngFor="let produto of produtos; let i = index" >
+        <img [src]="produto.url" alt="">
         <h3>{{ produto.nome }}</h3>
         <p>R${{ produto.valorVenda }}</p>
+        <p style="display: none;">Quantidade disponível: {{ produto.quantidade }}</p>
         <button (click)="showProductModal(produto)">Comprar</button>
       </div>
     </div>

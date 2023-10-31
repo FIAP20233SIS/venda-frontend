@@ -1,0 +1,29 @@
+<div class="completed-purchase">
+    <div class="completed-purchase__header">
+        <div class="completed-purchase__logo-header">
+            <img src="../../../assets/images/logo.svg" alt="">
+        </div>
+        <div class="completed-purchase__title-header">
+            Compra concluída!
+        </div>
+    </div>
+    <div class="completed-purchase__body" ngIf="produtoSelecionado && clienteEmail">
+        <div class="completed-purchase__card">
+            <div class="completed-purchase__order-id">
+                numero do pedido
+            </div>
+            <div class="completed-purchase__selected-plan">
+                <img alt="" src="assets/img/plan.png"/>
+                <!-- <div class="completed-purchase__info-plan">
+                    <div>produto selecionado  {{ produtoSelecionado.nome }}</div>
+                    <div class="completed-purchase__value">valor da compra {{ produtoSelecionado.valorVenda }}</div>
+                    <p>Email do Cliente: {{ clienteEmail }}</p>
+                </div> -->
+            </div>
+            <div class="completed-purchase__credencial-info">
+                status do pedido
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
