@@ -12,6 +12,7 @@ export class ProductsComponent {
   selectedProduct: any;
   modalProduct!: boolean;
   produtos: ProductInterface[] = [];
+  groupedProducts: any[] = [];
 
   constructor(private productService: ProductService) { }
 

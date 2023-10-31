@@ -3,12 +3,12 @@
         <img src="../../../assets/images/logo.svg" alt="">
     </div>
     <div class="products__list">
-        <div class="products__product" *ngFor="let produto of produtos">
+      <div class="products__product" *ngFor="let produto of produtos; let i = index" >
         <h3>{{ produto.nome }}</h3>
         <p>R${{ produto.valorVenda }}</p>
         <button (click)="showProductModal(produto)">Comprar</button>
-    </div>
+      </div>
     </div>
 </div>
 
-<app-modal-product *ngIf="modalProduct" (closeModalEmit)="modalProduct = false"></app-modal-product>
+<app-modal-product *ngIf="modalProduct" [product]="selectedProduct" (closeModalEmit)="modalProduct = false"></app-modal-product>
