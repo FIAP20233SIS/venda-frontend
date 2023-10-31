@@ -1,14 +1,32 @@
 # VendaWeb
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.8.
+## Integrantes
+- Felibe Biserra: RM: 88069
+- Gabriel Mota - RM: 88632
+- Rafael Afonso - RM: 85321
+- Vinicius Bouvier - RM: 86944
+- Yasmin Verderame - RM: 87023
+
+## Matéria e Professor 📖
+- Matéria: Microservice and Web Engineering
+- Professor: José Romualdo da Costa Filho
+
+## VENDA - WEB
+Projeto em Angular para:
+- exibir os produtos cadastrados na api Produtos
+- fazer o cadastro do cliente na api Cliente
+- fazer a compra do produto
+- gerar a venda
+
+## Tecnologias Utilizadas 💻
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
+- Angular
+- Typescript
+- api externas (Produto, Cliente e Pagamento)
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
