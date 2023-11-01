@@ -1,8 +1,11 @@
 .products {
-
     &__logo {
-        padding: 10px;
         height: 100px;
+        padding: 0px 30px;
+
+        img {
+            width: 70px;
+        }
     }
 
     &__list {
@@ -24,9 +27,14 @@
             font-size: 14px;
         }
 
-        img{
+        img {
             width: 70%;
         }
+
+        P {
+            margin-top: 20px;
+        }
+
         button {
             border: 0;
             border-radius: 30px;
@@ -37,6 +45,7 @@
             height: 47px;
             width: 130px;
             cursor: pointer;
+            margin-top: 20px;
         }
     }
 }

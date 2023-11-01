@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ClientInterface } from 'src/app/interfaces/client.interface';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { PurchaseService } from 'src/app/services/purchase/purchase.service';
 
 @Component({
   selector: 'app-register',
@@ -20,7 +21,8 @@ export class RegisterComponent {
   constructor(
     private http: HttpClient, 
     private toastr: ToastrService,
-    private router: Router
+    private router: Router,
+    private purchaseService: PurchaseService
   ) { }
 
   cadastrarCliente() {
@@ -36,17 +38,18 @@ export class RegisterComponent {
       (response) => {
         console.log('Cliente cadastrado com sucesso:', response);
         this.toastr.success('Cadastro realizado com sucesso');
-        this.router.navigate(['/pagamento']);
+        this.router.navigate(['/conclusao']);
       },
       (error) => {
         console.error('Erro ao cadastrar cliente:', error);
         this.toastr.error('Erro ao cadastrar');
-        this.router.navigate(['/pagamento']);
       }
     );
   }
 
   onSubmit() {
     this.cadastrarCliente();
+    this.purchaseService.cliente = this.client;
+    localStorage.setItem('cliente', JSON.stringify(this.client));
   }
 }

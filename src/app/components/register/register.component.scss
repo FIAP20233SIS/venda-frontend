@@ -1,13 +1,14 @@
 .register{
-    background-color: #fff;
-
     &__logo{
-        padding: 10px;
+        padding: 20px 30px;
+        img{
+            width: 70px;
+        }
     }
 
     &__container{
         display: flex;
-        padding: 30px;
+        padding: 0 30px;
     }
 
     .container{

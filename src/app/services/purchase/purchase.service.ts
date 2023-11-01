@@ -6,6 +6,15 @@ import { ProductInterface } from 'src/app/interfaces/product.interface';
 })
 export class PurchaseService {
   produtoSelecionado: ProductInterface | undefined;
-  clienteEmail: string | undefined
+  cliente: any
+  
   constructor() { }
+
+  setProdutoSelecionado(produto: any) {
+    this.produtoSelecionado = produto;
+  }
+
+  setCliente(cliente: any) {
+    this.cliente = cliente;
+  }
 }

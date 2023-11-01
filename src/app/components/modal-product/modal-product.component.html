@@ -2,23 +2,15 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" (click)="closeModalEmit.emit()">
-          <span>&times;</span>
-        </button>
+        <img src="../../../assets/images/x.png" alt="" (click)="closeModalEmit.emit()">
       </div>
       <div class="modal-body">
         <img [src]="product?.url" alt="">
-
-        <div class="modal-col">
-          <div class="modal-info-product">
-            <h5 class="modal-title"> {{ product?.nome }}</h5>
-            <p>{{ product?.descricao }}</p>
-            <p>R${{ product?.valorVenda }}</p>
-          </div>
-
-          <div class="modal-button">
-            <button (click)="comprarProduto()">comprar</button>
-          </div>
+        <div class="modal-info-product">
+          <h5 class="modal-title"> {{ product?.nome }}</h5>
+          <p>{{ product?.descricao }}</p>
+          <p>R${{ product?.valorVenda }}</p>
+          <button (click)="comprarProduto()">Comprar</button>
         </div>
       </div>
     </div>

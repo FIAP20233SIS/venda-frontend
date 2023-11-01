@@ -13,4 +13,8 @@ export class PaymentService {
   fazerPagamento(dados: PaymentService): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/pagamentos`, dados);
   }
+
+  getDadosPagamento(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/pagamentos`,);
+  }
 }
